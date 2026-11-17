@@ -19,5 +19,5 @@ Sistema web para cadastro de clientes e controle de estoque de peças e pneus.
 - Alertas de estoque mínimo
 
 ## Situação
-Projeto acadêmico em desenvolvimento.
+Projeto acadêmico em desenvolvimento, com foco na construção de um MVP para atender às necessidades de cadastro de clientes e controle de estoque do Auto Center Araújo.
 EOF
