@@ -3,7 +3,7 @@
 Sistema web para cadastro de clientes e controle de estoque de peças e pneus.
 
 ## Tecnologias
-- Python 3.12
+- Python 3.14
 - Django 5.2 LTS
 - PostgreSQL
 - HTML5
