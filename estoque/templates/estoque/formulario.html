@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Novo produto</h2>
+<p class="text-muted">Informe os dados do produto e a quantidade inicial disponível.</p>
+
+<form method="post" class="card card-body">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">
+        Salvar produto
+    </button>
+    <a href="{% url 'estoque:listar' %}" class="btn btn-secondary mt-2">
+        Voltar
+    </a>
+</form>
+
+{% endblock %}
