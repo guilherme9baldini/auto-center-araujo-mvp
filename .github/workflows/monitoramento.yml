@@ -1,0 +1,27 @@
+
+name: Monitoramento do Auto Center Araújo
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Verificar disponibilidade
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testar endpoint de saúde
+        env:
+          HEALTH_URL: https://auto-center-araujo-mvp.onrender.com/health/
+        run: |
+          response=$(curl --location --silent --show-error --fail \
+            --retry 2 --retry-delay 10 --retry-all-errors \
+            --max-time 120 "$HEALTH_URL")
+
+          if [ "$response" != "OK" ]; then
+            echo "ERRO: resposta inesperada: $response"
+            exit 1
+          fi
+
+          echo "SUCESSO: aplicação disponível. Resposta: $response"
